@@ -1,6 +1,4 @@
 package array_questions;
-
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Question5 {
@@ -20,23 +18,38 @@ public class Question5 {
 		}
 		
 		System.out.println("The Occurance of elements are");
-		for (int i = 0; i < arr.length; i++) {
+		for(int i=0;i<arr.length;i++) {
 			int count=0;
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[i] == arr[j]) {
-                    count++;                       
-                }
-            }
-
-           for(int k=i+1;k<arr.length;k++) {
-        	   if(arr[i]==arr[k]) {
-        		   arr[k]=-1;
-        	   }
-           }
-           if(count>0) {
-        	   System.out.println(arr[i]+" occurance is "+count);
-           }
+			for(int j=0;j<arr.length;j++) {
+				if((arr[i]==arr[j]) && (i>j)){
+					break;
+				}
+				if(arr[i]==arr[j]) {
+					count++;
+				}
+			}
+			if(count>0)
+			System.out.println(arr[i]+" occurs "+count+" times");
 		}
+		
+		
+//		for (int i = 0; i < arr.length; i++) {
+//			int count=0;
+//			for (int j = 0; j < arr.length; j++) {
+//				if (arr[i] == arr[j]) {
+//                    count++;                       
+//                }
+//            }
+//
+//           for(int k=i+1;k<arr.length;k++) {
+//        	   if(arr[i]==arr[k]) {
+//        		   arr[k]=-1;
+//        	   }
+//           }
+//           if(count>0) {
+//        	   System.out.println(arr[i]+" occurance is "+count);
+//           }
+//		}
 		
 	}
 	
