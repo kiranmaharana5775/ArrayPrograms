@@ -19,19 +19,36 @@ public class Question4 {
 		}
 		System.out.println("The fibonacii elements are:");
 		for(int i=0;i<arr.length;i++) {
-			if(isFibonacci(arr[i])) {
+			if(isFibo(arr[i])) {
 				System.out.println(arr[i]);
 			}
 		}
 	}
+	public static boolean isFibo(int num) {
+		int a = 0, b = 1;
+		if (num == 0 || num == 1) {
+			return true;
+		} else {
+			while ((a + b) <= num) {
+				int c = a + b;
+				if (c == num) {
+					return true;
+				}
+				a=b;
+				b=c;
+			}
+		}
 
-	private static boolean isFibonacci(int num) {
-		return isPerfectSquare(5 * num * num + 4) || isPerfectSquare(5 * num * num - 4);
+		return false;
 	}
 
-	private static boolean isPerfectSquare(int x) {
-		int sqrt = (int) Math.sqrt(x);
-		return sqrt * sqrt == x;
-	}
+	// private static boolean isFibonacci(int num) {
+	// 	return isPerfectSquare(5 * num * num + 4) || isPerfectSquare(5 * num * num - 4);
+	// }
+
+	// private static boolean isPerfectSquare(int x) {
+	// 	int sqrt = (int) Math.sqrt(x);
+	// 	return sqrt * sqrt == x;
+	// }
 	
 }
